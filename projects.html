@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects - Susheel Shankar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; }
+
+        .header {
+            padding: 80px;
+            text-align: center;
+            background: #ADD8E6;
+            color: black;
+        }
+
+        .header h1 { font-size: 40px; }
+
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(26, 97, 163, 0.473);
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a.active {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar a:hover { background-color: #ddd; color: black; }
+
+        .row { display: flex; flex-wrap: wrap; }
+
+        .side {
+            flex: 30%;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        .main {
+            flex: 70%;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+
+        @media screen and (max-width: 700px) { .row { flex-direction: column; } }
+        @media screen and (max-width: 400px) { .navbar a { float: none; width: 100%; } }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Susheel Shankar</h1>
+        <p>Weizmann Institute of Science</p>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="#">Research</a>
+        <a href="projects.html" class="active">Projects</a>
+    </div>
+
+    <div class="row">
+        <div class="side">
+            <h2>About Me</h2>
+            <h4>Photo of me:</h4>
+            <img src="picture.jpg" width="100%">
+            <p>I am a Master's student at the Weizmann Institute of Science. My advisor is Gal Binyamini. I did my Bachelor's in Mathematics at the Indian Institute of Science.</p>
+        </div>
+
+        <div class="main">
+            <h3>Projects</h3>
+            <p>
+                I often work on pure mathematics, involving questions in geometry and number theory.
+                In my free time, I also explore questions in computer science and its intersections with pure math.
+                This section mainly describes such projects that I work on.
+            </p>
+
+            <div class="project">
+                <h4>Algebraic Curve Classifier</h4>
+                <p>
+                    Machine learning has opened a new angle for approaching problems in pure science.
+                    As I was working on a project, I began wondering whether it could be used to understand curves and their properties.
+                    Since there is little research in this direction, I decided to start by building a curve classifier.
+                </p>
+                <p>
+                    I worked with the relatively simple case of degree 4 curves, using a CNN-based classifier in PyTorch
+                    to distinguish between smooth, nodal, and cuspidal curves. Since nodes and cusps are not easily
+                    distinguishable at small scales, I generated curves where the tangents at a singularity had noticeable
+                    coefficients, and for nodal curves, ensured the angle between tangents was at least arctan(0.3).
+                </p>
+                <p>
+                    Two models were trained: Max Pooling and Average Pooling. Both achieved strong results — 87.6% and 88.4%
+                    accuracy, respectively — with Average Pooling performing ~4% better on nodal curves. 
+                <p>
+                    More information can be found here:
+                </p>
+                <a href="https://github.com/susheels2000/algebraic-curves-classifier" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
